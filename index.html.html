@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bhumika Chandan — Data Analyst Fresher portfolio. Python, Pandas, NumPy, SQL, Excel, Power BI, Matplotlib and Seaborn.">
+  <meta name="keywords" content="Bhumika Chandan, Data Analyst Fresher, Python, SQL, Power BI, Excel, Pandas, NumPy">
+  <title>Bhumika Chandan | Data Analyst Fresher</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style> 
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,sans-serif;color:#172033;background:#fff;line-height:1.7}
+.container{width:min(1120px,92%);margin:auto}
+.section{padding:100px 0}
+.alt{background:#f6f9fc}
+
+.header{position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid #e8edf3}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:25px;font-weight:800;color:#172033;text-decoration:none}
+.logo span,.hero h1 span,.section-heading h2 span,.center-heading h2 span{color:#147d92}
+.nav-links{display:flex;gap:25px}
+.nav-links a{color:#536074;text-decoration:none;font-size:14px;font-weight:600}
+.nav-links a:hover{color:#147d92}
+.menu-toggle{display:none;border:0;background:none;font-size:25px;color:#172033}
+
+.hero{padding-top:160px;min-height:700px;display:flex;align-items:center}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:70px;align-items:center}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:2px;color:#147d92;margin-bottom:13px}
+.hero h1{font-size:clamp(44px,6vw,72px);line-height:1.08;letter-spacing:-2px;margin-bottom:25px}
+.hero-description{max-width:650px;color:#617087;font-size:17px}
+.hero-buttons{display:flex;gap:14px;margin:30px 0}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 22px;border-radius:9px;text-decoration:none;font-weight:700;border:1px solid transparent;cursor:pointer;font-family:inherit}
+.btn-primary{background:#147d92;color:#fff}
+.btn-primary:hover{background:#0f6576;transform:translateY(-2px)}
+.btn-outline{border-color:#d6dee8;color:#172033;background:#fff}
+.btn-outline:hover{border-color:#147d92;color:#147d92}
+
+.quick-info{display:flex;gap:20px;flex-wrap:wrap;color:#738096;font-size:13px}
+.hero-card{display:flex;justify-content:center}
+
+
+/* =========================
+   PROFILE PHOTO
+   ========================= */
+
+.profile-placeholder{
+    width:330px;
+    height:390px;
+    border-radius:24px;
+    background:linear-gradient(145deg,#eaf5f7,#f3f6fa);
+    border:1px solid #dce7ed;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    overflow:hidden;
+}
+
+/* YOUR PHOTO */
+.profile-photo{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    border-radius:24px;
+}
+
+
+/* =========================
+   OLD PHOTO PLACEHOLDER
+   ========================= */
+
+.profile-icon{
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:#147d92;
+    color:white;
+    font-size:38px;
+    font-weight:800;
+    margin-bottom:18px
+}
+
+.profile-placeholder p{font-weight:700}
+.profile-placeholder small{color:#738096}
+
+.two-col{display:grid;grid-template-columns:.8fr 1.2fr;gap:90px}
+.section-heading h2,.center-heading h2{font-size:40px;line-height:1.2;letter-spacing:-1px}
+.about-content{color:#637087;font-size:16px}
+.about-content p+p{margin-top:15px}
+
+.stats{display:flex;gap:45px;margin-top:30px}
+.stats div{display:flex;flex-direction:column}
+.stats strong{font-size:26px;color:#172033}
+.stats span{font-size:12px;color:#7b8799}
+
+.center-heading{text-align:center;max-width:700px;margin:0 auto 50px}
+.center-heading>p:last-child{color:#718096;margin-top:14px}
+
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.skill-card,.project-card,.cert-card,.education-card{background:#fff;border:1px solid #e4eaf0;border-radius:16px;padding:28px;transition:.25s}
+
+.skill-card:hover,.project-card:hover,.cert-card:hover,.education-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 35px rgba(23,32,51,.08)
+}
+
+.skill-icon{font-size:28px;margin-bottom:15px}
+.skill-card h3{font-size:17px;margin-bottom:14px}
+
+.tags,.tech-list{display:flex;gap:7px;flex-wrap:wrap}
+.tags span,.tech-list span{font-size:12px;padding:5px 9px;background:#f0f5f7;color:#496274;border-radius:6px}
+
+.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:25px}
+.project-card{min-height:320px}
+.project-top{display:flex;justify-content:space-between;margin-bottom:35px}
+.project-number{font-weight:800;color:#147d92;font-size:20px}
+.project-type{font-size:11px;color:#7c8798;border:1px solid #e1e7ed;padding:4px 9px;border-radius:20px}
+.project-card h3{font-size:24px;margin-bottom:12px}
+.project-card p{color:#69778b;font-size:14px;margin-bottom:25px}
+
+.education-card{max-width:800px;margin:auto;display:flex;gap:30px;align-items:center}
+.edu-year{font-size:30px;font-weight:800;color:#147d92}
+.education-card p{color:#748096}
+
+.timeline{max-width:800px;margin:auto;border-left:2px solid #dce6eb;padding-left:35px}
+.timeline-item{position:relative;display:grid;grid-template-columns:55px 1fr;gap:25px;margin-bottom:35px}
+
+.timeline-item:before{
+    content:"";
+    position:absolute;
+    left:-43px;
+    top:7px;
+    width:13px;
+    height:13px;
+    border-radius:50%;
+    background:#147d92;
+    border:4px solid #eaf5f7
+}
+
+.timeline-item>span{font-size:12px;font-weight:800;color:#147d92}
+.timeline-item h3{font-size:17px}
+.timeline-item p{color:#758196;font-size:14px}
+
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cert-card{text-align:center}
+.cert-card div{font-size:30px;margin-bottom:10px}
+.cert-card p,.edit-note{color:#7a8699;font-size:13px}
+.edit-note{text-align:center;margin-top:20px}
+
+.resume-section{padding-top:70px;padding-bottom:70px}
+
+.resume-card{
+    background:#172033;
+    color:#fff;
+    border-radius:20px;
+    padding:45px 50px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px
+}
+
+.resume-card .eyebrow{color:#8bd0d9}
+.resume-card p:not(.eyebrow){color:#b9c4d3;margin-top:8px}
+
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;max-width:950px;margin:auto}
+.contact-info{display:flex;flex-direction:column;gap:24px}
+.contact-item{display:flex;gap:16px;align-items:center}
+
+.contact-item>span{
+    width:42px;
+    height:42px;
+    border-radius:10px;
+    background:#eaf5f7;
+    display:grid;
+    place-items:center;
+    color:#147d92;
+    font-weight:800
+}
+
+.contact-item small{color:#8490a1}
+.contact-item p{font-size:14px}
+
+.contact-form{display:flex;flex-direction:column;gap:14px}
+
+.contact-form input,.contact-form textarea{
+    font:inherit;
+    border:1px solid #dce4eb;
+    border-radius:9px;
+    padding:13px 15px;
+    outline:none;
+    resize:vertical
+}
+
+.contact-form input:focus,.contact-form textarea:focus{border-color:#147d92}
+.form-note{font-size:11px;color:#8a94a4}
+
+.footer{background:#111927;color:#aeb8c7;padding:30px 0}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.footer .logo{color:#fff}
+.footer p{font-size:12px}
+
+.top-btn{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    width:42px;
+    height:42px;
+    border:0;
+    border-radius:50%;
+    background:#147d92;
+    color:#fff;
+    font-size:20px;
+    cursor:pointer;
+    display:none
+}
+
+.reveal{
+    opacity:0;
+    transform:translateY(20px);
+    transition:opacity .6s ease,transform .6s ease
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:none
+}
+
+
+/* TABLET */
+
+@media(max-width:850px){
+
+    .nav-links{
+        position:absolute;
+        top:72px;
+        left:0;
+        width:100%;
+        background:#fff;
+        display:none;
+        flex-direction:column;
+        padding:20px 4%;
+        border-bottom:1px solid #e8edf3
+    }
+
+    .nav-links.open{display:flex}
+    .menu-toggle{display:block}
+
+    .hero-grid,
+    .two-col,
+    .contact-grid{
+        grid-template-columns:1fr;
+        gap:45px
+    }
+
+    .hero{padding-top:125px}
+    .hero-card{order:-1}
+
+    .profile-placeholder{
+        width:260px;
+        height:300px
+    }
+
+    .skills-grid,
+    .cert-grid{
+        grid-template-columns:repeat(2,1fr)
+    }
+
+    .section-heading{text-align:center}
+
+    .resume-card{
+        flex-direction:column;
+        align-items:flex-start
+    }
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    .section{padding:75px 0}
+    .hero h1{font-size:44px}
+    .hero-description{font-size:15px}
+    .quick-info{gap:10px;flex-direction:column}
+
+    .skills-grid,
+    .projects-grid,
+    .cert-grid{
+        grid-template-columns:1fr
+    }
+
+    .section-heading h2,
+    .center-heading h2{
+        font-size:32px
+    }
+
+    .stats{gap:25px}
+    .education-card{align-items:flex-start}
+    .resume-card{padding:32px}
+    .footer-inner{flex-direction:column;align-items:flex-start}
+    .hero-buttons{flex-direction:column}
+    .btn{width:100%}
+}
+
+</style>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav container">
+      <a href="#home" class="logo">Bhumika<span>.</span></a>
+      <button class="menu-toggle" aria-label="Open menu">☰</button>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#journey">Journey</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-text reveal">
+          <p class="eyebrow">DATA ANALYST FRESHER</p>
+          <h1>Turning Data into <span>Meaningful Insights.</span></h1>
+          <p class="hero-description">
+            Computer Applications graduate passionate about Data Analytics and interested in transforming raw data into meaningful insights through analysis and visualization.
+          </p>
+         <div class="hero-buttons"> 
+    <a class="btn btn-primary" href="#projects">View My Projects</a> 
+    <a class="btn btn-outline" href="Data Analyst Resume.pdf" target="_blank">
+        View Resume
+    </a> 
+</div>
+          <div class="quick-info">
+            <span>📍 India</span>
+            <span>🎓 Graduate · 2026</span>
+            <span>💼 Open to Opportunities</span>
+          </div>
+        </div>
+        <div class="hero-card reveal">
+  <div class="profile-placeholder">
+    <img src="profile.jpg.png" 
+         alt="Bhumika Chandan"
+         class="profile-photo">
+  </div>
+</div>
+      </div>
+    </section>
+
+    <section id="about" class="section alt">
+      <div class="container two-col">
+        <div class="section-heading reveal">
+          <p class="eyebrow">ABOUT ME</p>
+          <h2>Curious about data.<br><span>Focused on learning.</span></h2>
+        </div>
+        <div class="about-content reveal">
+          <p>
+            I am a Computer Applications graduate with a strong interest in Data Analytics. I enjoy working with data, identifying patterns, creating meaningful visualizations, and finding insights that can support better decisions.
+          </p>
+          <p>
+            I am currently strengthening my Data Analytics skills through practical projects and hands-on learning in Python, SQL, Excel and Power BI.
+          </p>
+          <div class="stats">
+            <div><strong>2026</strong><span>Graduation</span></div>
+            <div><strong>2+</strong><span>Projects</span></div>
+            <div><strong>8+</strong><span>Core Skills</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="center-heading reveal">
+          <p class="eyebrow">MY SKILLS</p>
+          <h2>Tools I use to work with <span>data.</span></h2>
+        </div>
+        <div class="skills-grid">
+          <article class="skill-card reveal">
+            <div class="skill-icon">🐍</div>
+            <h3>Programming & Data</h3>
+            <div class="tags"><span>Python</span><span>Pandas</span><span>NumPy</span></div>
+          </article>
+          <article class="skill-card reveal">
+            <div class="skill-icon">📊</div>
+            <h3>Visualization</h3>
+            <div class="tags"><span>Power BI</span><span>Matplotlib</span><span>Seaborn</span></div>
+          </article>
+          <article class="skill-card reveal">
+            <div class="skill-icon">🗄️</div>
+            <h3>Database</h3>
+            <div class="tags"><span>SQL</span></div>
+          </article>
+          <article class="skill-card reveal">
+            <div class="skill-icon">📈</div>
+            <h3>Data Tools</h3>
+            <div class="tags"><span>Excel</span><span>Jupyter Notebook</span></div>
+          </article>
+          <article class="skill-card reveal">
+            <div class="skill-icon">🧹</div>
+            <h3>Analytics</h3>
+            <div class="tags"><span>Data Cleaning</span><span>EDA</span><span>Visualization</span><span>Basic Statistics</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+<section id="projects" class="section alt">
+  <div class="container">
+    <div class="center-heading reveal">
+      <p class="eyebrow">FEATURED PROJECTS</p>
+      <h2>Practical work that <span>shows my skills.</span></h2>
+    </div>
+
+    <div class="projects-grid">
+
+      <article class="project-card reveal">
+        <div class="project-top">
+          <span class="project-number">01</span>
+          <span class="project-type">Data Analytics</span>
+        </div>
+
+        
+<h3>E-commerce Sales Analysis</h3>
+
+<p>
+  Performed exploratory data analysis on e-commerce sales
+  data using Python. Cleaned and analyzed the dataset
+  to identify sales trends, product performance,
+  profit patterns and meaningful business insights.
+</p>
+
+<div class="tech-list">
+  <span>Python</span>
+  <span>Pandas</span>
+  <span>NumPy</span>
+  <span>Matplotlib</span>
+  <span>Seaborn</span>
+</div>
+
+<div class="project-actions">
+
+  <a href="Projects\Ecommerce Sales Analysis.py.ipynb"
+     class="btn btn-primary"
+     download>
+    Download Python Project
+  </a>
+
+
+</div>
+
+</article>
+
+
+
+      <article class="project-card reveal">
+        <div class="project-top">
+          <span class="project-number">02</span>
+          <span class="project-type">Excel Dashboard</span>
+        </div>
+
+        <h3>Swiggy Sales & Food Analysis Dashboard</h3>
+
+        <p>
+          Cleaned and transformed Swiggy food-order data using Microsoft Excel.
+          Created PivotTables, PivotCharts, KPIs and an interactive dashboard
+          to analyze sales, average order value, ratings, food categories,
+          restaurants, cities and states.
+        </p>
+
+        <div class="tech-list">
+          <span>Microsoft Excel</span>
+          <span>Data Cleaning</span>
+          <span>PivotTables</span>
+          <span>PivotCharts</span>
+          <span>Dashboard</span>
+        </div>
+        
+<div class="project-actions">
+  <a href="Projects\Swiggy Raw Data Excel (2).xlsx"
+     class="btn btn-primary"
+     download>
+    Download Excel Project
+  </a>
+
+  <a href="Images\swiggy-dashboard.png"
+     class="btn btn-outline"
+     target="_blank"
+     rel="noopener noreferrer">
+    View Dashboard
+  </a>
+</div>
+
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+    <section id="education" class="section">
+      <div class="container">
+        <div class="center-heading reveal">
+          <p class="eyebrow">EDUCATION</p>
+          <h2>My academic <span>background.</span></h2>
+        </div>
+        <div class="education-card reveal">
+          <div class="edu-year">2026</div>
+          <div><h3>Bachelor's Degree in Computer Applications</h3><p>Completed in 2026</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="journey" class="section alt">
+      <div class="container">
+        <div class="center-heading reveal">
+          <p class="eyebrow">DATA ANALYTICS JOURNEY</p>
+          <h2>Learning, practicing, <span>building.</span></h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item reveal"><span>2026</span><div><h3>Computer Applications Graduation</h3><p>Completed bachelor's degree.</p></div></div>
+          <div class="timeline-item reveal"><span>01</span><div><h3>Started Data Analytics Learning</h3><p>Building a strong foundation in data analysis.</p></div></div>
+          <div class="timeline-item reveal"><span>02</span><div><h3>Python for Data Analysis</h3><p>Practicing Python, NumPy and Pandas.</p></div></div>
+          <div class="timeline-item reveal"><span>03</span><div><h3>Excel & Data Cleaning</h3><p>Learning practical data preparation techniques.</p></div></div>
+          <div class="timeline-item reveal"><span>04</span><div><h3>Visualization & Power BI</h3><p>Creating charts, dashboards and business-focused visuals.</p></div></div>
+          <div class="timeline-item reveal"><span>05</span><div><h3>SQL & Practical Projects</h3><p>Developing job-ready analytics skills through practice.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    
+<
+<section id="certifications" class="section">
+  <div class="container">
+
+    <div class="center-heading reveal">
+      <p class="eyebrow">CERTIFICATIONS</p>
+      <h2>Learning beyond the <span>classroom.</span></h2>
+    </div>
+
+    <div class="cert-grid">
+
+      <!-- Python Certificate -->
+      <article class="cert-card reveal">
+        <div>🏆</div>
+        <h3>Python Programming Certification</h3>
+        <p>iBase Electrosoft LLP · 2024</p>
+
+        <a href="Certificates - Copy\python-certificate.pdf"
+           class="btn btn-outline"
+           target="_blank"
+           rel="noopener noreferrer">
+          View Certificate
+        </a>
+      </article>
+
+      <!-- Application Development Certificate -->
+      <article class="cert-card reveal">
+        <div>🏆</div>
+        <h3>Application Development Certification</h3>
+        <p>iBase Electrosoft LLP · 2025</p>
+
+        <a href="Certificates - Copy\Android Certificate.pdf"
+           class="btn btn-outline"
+           target="_blank"
+           rel="noopener noreferrer">
+          View Certificate
+        </a>
+      </article>
+
+      
+<!-- Excel Certificate -->
+<article class="cert-card reveal">
+  <div>🏆</div>
+
+  <h3>Microsoft Excel Certification</h3>
+
+  <p>Excel Training · 2026</p>
+
+  <a href="Certificates - Copy\Excel certificate.png"
+     class="btn btn-outline"
+     target="_blank"
+     rel="noopener noreferrer">
+    View Certificate
+  </a>
+</article>
+
+
+    </div>
+
+    <p class="edit-note">
+      Certifications and achievements related to
+      my technical learning journey.
+    </p>
+
+  </div>
+
+
+    <section id="resume" class="section resume-section">
+      
+<div class="container resume-card reveal">
+  <div>
+    <p class="eyebrow">RESUME</p>
+    <h2>Interested in my profile?</h2>
+    <p>Download my resume to learn more about my education, technical skills and projects.</p>
+  </div>
+
+  <a 
+<a href="Data Analyst Resume.pdf"
+   class="btn btn-primary"
+   download="Data Analyst Resume.pdf">
+  ⬇ Download Resume
+</a>
+
+  </a>
+</div>
+
+
+    </section>
+
+    <section id="contact" class="section alt">
+      <div class="container">
+        <div class="center-heading reveal">
+          <p class="eyebrow">LET'S CONNECT</p>
+          <h2>Start a <span>conversation.</span></h2>
+          <p>I am currently looking for opportunities to begin my career in Data Analytics and would be happy to connect.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <div class="contact-item"><span>✉️</span><div><small>Email</small><p> <a href="mailto:bhumikachandan482@gmail.com">
+        bhumikachandan482@gmail.com
+      </a></p></div></div>
+            <div class="contact-item">
+    <span>in</span>
+    <div>
+        <small>LinkedIn</small>
+        <p>
+            <a href="https://www.linkedin.com/in/bhumika-chandan/" target="_blank">
+                LinkedIn Profile
+            </a>
+        </p>
+    </div>
+</div>
+
+<div class="contact-item">
+    <span>◉</span>
+    <div>
+        <small>GitHub</small>
+        <p>
+            <a href="https://github.com/bhumikachandan-82" target="_blank">
+                GitHub Profile
+            </a>
+        </p>
+    </div>
+</div>
+
+<div class="contact-item">
+    <span>📍</span>
+    <div>
+        <small>Location</small>
+        <p>India</p>
+    </div>
+</div>
+          </div>
+          <form class="contact-form reveal" id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" rows="6" placeholder="Your Message" required></textarea>
+            <button class="btn btn-primary" type="submit">Send Message</button>
+            <p> 
+
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div><a href="#home" class="logo">Bhumika<span>.</span></a><p>Data Analyst Fresher · Turning Data into Meaningful Insights</p></div>
+      <p>© 2026 Bhumika Chandan. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <button class="top-btn" id="topBtn" aria-label="Back to top">↑</button>
+  <script>
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+const topBtn = document.querySelector("#topBtn");
+
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => navLinks.classList.remove("open"));
+});
+
+window.addEventListener("scroll", () => {
+  topBtn.style.display = window.scrollY > 500 ? "block" : "none";
+});
+
+topBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add("visible");
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+document.querySelector("#contactForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  
+  const recipient = "bhumikachandan482@gmail.com";
+  const name = document.querySelector("#name").value.trim();
+  const email = document.querySelector("#email").value.trim();
+  const message = document.querySelector("#message").value.trim();
+
+  const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
+  const body = encodeURIComponent(
+    `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+  );
+
+  window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+});
+
+</script>
+</body>
+</html>
